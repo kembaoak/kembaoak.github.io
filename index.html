@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chivuzo Edwin Okwor</title>
+    <meta name="description" content="Portfolio of Chivuzo Edwin Okwor — Data Science graduate student and software developer." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>Chivuzo Edwin Okwor</h1>
+            <p class="headline">Data Science Graduate Student @ Seattle University · Software Developer</p>
+            <div class="contact-links">
+                <a href="mailto:edwinokwor@gmail.com">✉ edwinokwor@gmail.com</a>
+                <a href="https://github.com/kembaoak" target="_blank" rel="noopener">GitHub</a>
+                <a href="assets/Chivuzo_Okwor_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="card-grid">
+                <div class="card featured">
+                    <h3>Three Musketeers</h3>
+                    <p>
+                        A browser-playable port of a classic 5x5 capture-based strategy game.
+                        Play as the Musketeers, hunting down Enemies while avoiding being lined
+                        up in a row or column — or play as the Enemies, trying to force that
+                        alignment. Includes a Human vs Human mode and a Human vs AI mode with an
+                        alpha-beta search opponent.
+                    </p>
+                    <div class="tag-row">
+                        <span>JavaScript</span>
+                        <span>HTML/CSS</span>
+                        <span>Minimax AI</span>
+                    </div>
+                    <a class="btn" href="projects/three-musketeers/">Play Now</a>
+                </div>
+
+                <!-- Add more project cards here by copying this template and filling in the blanks -->
+                <div class="card">
+                    <h3><!-- Project Title --></h3>
+                    <p>
+                        <!-- Short description of the project -->
+                    </p>
+                    <div class="tag-row">
+                        <span><!-- Tech --></span>
+                        <span><!-- Tech --></span>
+                    </div>
+                    <a class="btn" href="#" target="_blank" rel="noopener">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="coursework">
+            <h2>Data Science Coursework</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3><!-- Project Title --></h3>
+                    <p>
+                        <!-- Short description of the project -->
+                    </p>
+                    <div class="tag-row">
+                        <span><!-- Tech --></span>
+                        <span><!-- Tech --></span>
+                    </div>
+                    <a class="btn" href="#" target="_blank" rel="noopener">Read Report</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Java</li>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>HTML &amp; CSS</li>
+                <li>Git &amp; GitHub</li>
+                <li>Google Cloud Platform</li>
+                <li>Visual Studio Code</li>
+                <li>IntelliJ</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            &copy; <span id="year"></span> Chivuzo Edwin Okwor
+        </div>
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

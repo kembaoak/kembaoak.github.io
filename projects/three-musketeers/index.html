@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Musketeers — Chivuzo Okwor</title>
+    <meta name="description" content="Play Three Musketeers, a capture-based 5x5 strategy game, in your browser." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="page">
+        <a class="back-link" href="../../">&larr; Back to portfolio</a>
+        <h1>Three Musketeers</h1>
+
+        <div class="top-bar">
+            <span id="status-label" class="status-label"></span>
+            <button id="new-game-button" class="btn">New Game</button>
+        </div>
+
+        <div id="board" class="board" aria-label="Three Musketeers board"></div>
+
+        <section class="rules">
+            <h2>Rules</h2>
+            <ul>
+                <li>Musketeers (🤺, black) move first. A Musketeer's only legal move is capturing an orthogonally-adjacent Enemy.</li>
+                <li>Enemies (🪖, white) can only slide onto an orthogonally-adjacent empty square — they can never capture a Musketeer.</li>
+                <li><strong>Enemies win</strong> if they force all 3 Musketeers into the same row or column.</li>
+                <li><strong>Musketeers win</strong> if, on their turn, they have no legal move and are not aligned in a row or column.</li>
+            </ul>
+        </section>
+    </div>
+
+    <div id="new-game-modal" class="modal-overlay">
+        <div class="modal">
+            <h2>New Game</h2>
+            <fieldset>
+                <legend>Mode</legend>
+                <label><input type="radio" name="mode" value="human-vs-human" checked /> Human vs Human</label>
+                <label><input type="radio" name="mode" value="human-vs-ai" /> Human vs AI</label>
+            </fieldset>
+            <fieldset id="side-fieldset" disabled>
+                <legend>Your side</legend>
+                <label><input type="radio" name="side" value="MUSKETEER" checked /> Play as Musketeers</label>
+                <label><input type="radio" name="side" value="GUARD" /> Play as Enemies</label>
+            </fieldset>
+            <button id="start-game-button" class="btn">Start</button>
+        </div>
+    </div>
+
+    <div id="game-over-modal" class="modal-overlay">
+        <div class="modal">
+            <h2 id="game-over-heading"></h2>
+            <p id="game-over-text"></p>
+            <button id="game-over-new-game-button" class="btn">New Game</button>
+            <button id="game-over-close-button" class="btn btn-secondary">Close</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/ui.js"></script>
+</body>
+</html>
