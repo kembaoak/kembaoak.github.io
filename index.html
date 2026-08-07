@@ -32,6 +32,14 @@
         <div class="hero-wash" aria-hidden="true"></div>
         <div class="container hero-grid">
             <div class="hero-copy">
+                <div class="avatar">
+                    <img
+                        src="assets/profile.jpg"
+                        alt="Chivuzo Edwin Okwor"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    />
+                    <div class="avatar-fallback" aria-hidden="true">CEO</div>
+                </div>
                 <p class="eyebrow">// Portfolio</p>
                 <h1>Chivuzo<br />Edwin Okwor</h1>
                 <p class="headline">
@@ -58,8 +66,11 @@
     </header>
 
     <main>
-        <section id="about" class="container">
-            <p class="eyebrow">// About</p>
+        <section id="about" class="container about-grid">
+            <div class="about-lead">
+                <p class="eyebrow">// About</p>
+                <p class="lead-statement">Bridging data science and shipped software.</p>
+            </div>
             <p class="about-text">
                 I'm a Master's student in Data Science at Seattle University, coming from a
                 Computer Science background (York University, Brock University) and — earlier
@@ -72,46 +83,20 @@
 
         <section id="projects" class="container">
             <p class="eyebrow">// Projects</p>
-            <div class="card-grid">
-                <!-- Add more project cards here by copying this template and filling in the blanks -->
-                <div class="card">
-                    <h3><!-- Project Title --></h3>
-                    <p>
-                        <!-- Short description of the project -->
-                    </p>
-                    <div class="tag-row">
-                        <span><!-- Tech --></span>
-                        <span><!-- Tech --></span>
-                    </div>
-                    <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View Project</a>
-                </div>
 
-                <div class="card">
-                    <h3><!-- Project Title --></h3>
-                    <p>
-                        <!-- Short description of the project -->
-                    </p>
-                    <div class="tag-row">
-                        <span><!-- Tech --></span>
-                        <span><!-- Tech --></span>
+            <div class="feature-card">
+                <div class="feature-visual">
+                    <div class="mini-board" aria-hidden="true">
+                        <div class="mc l"></div><div class="mc d"></div><div class="mc l"></div><div class="mc d"></div><div class="mc l musketeer"></div>
+                        <div class="mc d"></div><div class="mc l"></div><div class="mc d enemy"></div><div class="mc l"></div><div class="mc d"></div>
+                        <div class="mc l"></div><div class="mc d enemy"></div><div class="mc l musketeer"></div><div class="mc d enemy"></div><div class="mc l"></div>
+                        <div class="mc d"></div><div class="mc l"></div><div class="mc d enemy"></div><div class="mc l"></div><div class="mc d"></div>
+                        <div class="mc l musketeer"></div><div class="mc d"></div><div class="mc l"></div><div class="mc d"></div><div class="mc l"></div>
                     </div>
-                    <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View Project</a>
+                    <p class="card-label">▶ playable</p>
                 </div>
-
-                <div class="card featured">
-                    <div class="card-top">
-                        <div>
-                            <p class="card-label">▶ playable</p>
-                            <h3>Three Musketeers</h3>
-                        </div>
-                        <div class="mini-board" aria-hidden="true">
-                            <div class="mc l"></div><div class="mc d"></div><div class="mc l"></div><div class="mc d"></div><div class="mc l musketeer"></div>
-                            <div class="mc d"></div><div class="mc l"></div><div class="mc d enemy"></div><div class="mc l"></div><div class="mc d"></div>
-                            <div class="mc l"></div><div class="mc d enemy"></div><div class="mc l musketeer"></div><div class="mc d enemy"></div><div class="mc l"></div>
-                            <div class="mc d"></div><div class="mc l"></div><div class="mc d enemy"></div><div class="mc l"></div><div class="mc d"></div>
-                            <div class="mc l musketeer"></div><div class="mc d"></div><div class="mc l"></div><div class="mc d"></div><div class="mc l"></div>
-                        </div>
-                    </div>
+                <div class="feature-body">
+                    <h3>Three Musketeers</h3>
                     <p>
                         A browser-playable port of a classic 5x5 capture-based strategy game.
                         Play as the Musketeers, hunting down Enemies while avoiding being lined
@@ -125,6 +110,33 @@
                         <span>Minimax AI</span>
                     </div>
                     <a class="btn" href="projects/three-musketeers/">Play Now →</a>
+                </div>
+            </div>
+
+            <!-- Add more project cards here by copying this template and filling in the blanks -->
+            <div class="card-grid secondary">
+                <div class="card">
+                    <h3><!-- Project Title --></h3>
+                    <p>
+                        <!-- Short description of the project -->
+                    </p>
+                    <div class="tag-row">
+                        <span><!-- Tech --></span>
+                        <span><!-- Tech --></span>
+                    </div>
+                    <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View Project</a>
+                </div>
+
+                <div class="card">
+                    <h3><!-- Project Title --></h3>
+                    <p>
+                        <!-- Short description of the project -->
+                    </p>
+                    <div class="tag-row">
+                        <span><!-- Tech --></span>
+                        <span><!-- Tech --></span>
+                    </div>
+                    <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View Project</a>
                 </div>
             </div>
         </section>
