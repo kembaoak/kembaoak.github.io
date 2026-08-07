@@ -1,12 +1,12 @@
 :root {
-    --bg: #1c1f26;
-    --bg-panel: #262a33;
-    --bg-panel-alt: #2f3440;
-    --text: #eceff1;
-    --text-muted: #a7adba;
-    --accent: #c9a86a;
-    --accent-strong: #ffca28;
-    --border: #3a3f4b;
+    --bg: #ffffff;
+    --bg-panel: #f4f8fd;
+    --bg-panel-alt: #e8f1fc;
+    --text: #16213a;
+    --text-muted: #5a6b85;
+    --accent: #1565c0;
+    --accent-strong: #0d47a1;
+    --border: #d5e2f2;
     --max-width: 960px;
 }
 
@@ -143,8 +143,8 @@ section h2 {
 
 .tag-row span {
     font-size: 0.78rem;
-    color: var(--accent);
-    background: rgba(201, 168, 106, 0.12);
+    color: var(--accent-strong);
+    background: rgba(21, 101, 192, 0.1);
     border-radius: 6px;
     padding: 3px 8px;
 }
@@ -153,7 +153,7 @@ section h2 {
     display: inline-block;
     align-self: flex-start;
     background: var(--accent);
-    color: #1c1f26;
+    color: #ffffff;
     font-weight: 600;
     padding: 8px 18px;
     border-radius: 8px;
