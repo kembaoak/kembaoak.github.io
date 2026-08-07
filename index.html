@@ -5,24 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chivuzo Edwin Okwor</title>
     <meta name="description" content="Portfolio of Chivuzo Edwin Okwor — Data Science graduate student and software developer." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="hero">
-        <div class="container">
-            <h1>Chivuzo Edwin Okwor</h1>
-            <p class="headline">Data Science Graduate Student @ Seattle University · Software Developer</p>
-            <div class="contact-links">
-                <a href="mailto:edwinokwor@gmail.com">✉ edwinokwor@gmail.com</a>
-                <a href="https://github.com/kembaoak" target="_blank" rel="noopener">GitHub</a>
-                <a href="assets/Chivuzo_Okwor_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+    <nav class="site-nav">
+        <div class="container site-nav-inner">
+            <a class="wordmark" href="#top">C. E. Okwor</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#coursework">Coursework</a>
+                <a href="#skills">Stack</a>
+                <a class="nav-resume" href="assets/Chivuzo_Okwor_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="top">
+        <div class="hero-wash" aria-hidden="true"></div>
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <p class="eyebrow">// Portfolio</p>
+                <h1>Chivuzo<br />Edwin Okwor</h1>
+                <p class="headline">
+                    Data Science Graduate Student, Seattle University — building tactical
+                    games and data-driven tools.
+                </p>
+                <nav class="contact-links" aria-label="Contact">
+                    <a href="mailto:edwinokwor@gmail.com">[ email ]</a>
+                    <a href="https://github.com/kembaoak" target="_blank" rel="noopener">[ github ]</a>
+                    <a href="assets/Chivuzo_Okwor_Resume.pdf" target="_blank" rel="noopener">[ résumé ]</a>
+                </nav>
+            </div>
+            <div class="hero-motif" aria-hidden="true">
+                <div class="board-motif">
+                    <div class="motif-cell"></div><div class="motif-cell piece"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div>
+                    <div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div>
+                    <div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell piece"></div><div class="motif-cell"></div>
+                    <div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div>
+                    <div class="motif-cell piece"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div>
+                </div>
+                <p class="motif-caption">3 pieces, no shared row or column — a win state in Three Musketeers</p>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <section id="projects">
-            <h2>Projects</h2>
+    <main>
+        <section id="about" class="container">
+            <p class="eyebrow">// About</p>
+            <p class="about-text">
+                I'm a Master's student in Data Science at Seattle University, coming from a
+                Computer Science background (York University, Brock University) and — earlier
+                still — a Bachelor of Commerce in Accounting from the University of Windsor.
+                That path shows up in how I work: comfortable moving between statistical
+                analysis and shipped software, whether that's a course project on flight delay
+                patterns or a full game engine built from scratch, like the one below.
+            </p>
+        </section>
+
+        <section id="projects" class="container">
+            <p class="eyebrow">// Projects</p>
             <div class="card-grid">
                 <!-- Add more project cards here by copying this template and filling in the blanks -->
                 <div class="card">
@@ -34,7 +83,7 @@
                         <span><!-- Tech --></span>
                         <span><!-- Tech --></span>
                     </div>
-                    <a class="btn" href="#" target="_blank" rel="noopener">View Project</a>
+                    <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View Project</a>
                 </div>
 
                 <div class="card">
@@ -46,11 +95,23 @@
                         <span><!-- Tech --></span>
                         <span><!-- Tech --></span>
                     </div>
-                    <a class="btn" href="#" target="_blank" rel="noopener">View Project</a>
+                    <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View Project</a>
                 </div>
 
                 <div class="card featured">
-                    <h3>Three Musketeers</h3>
+                    <div class="card-top">
+                        <div>
+                            <p class="card-label">▶ playable</p>
+                            <h3>Three Musketeers</h3>
+                        </div>
+                        <div class="mini-board" aria-hidden="true">
+                            <div class="mc l"></div><div class="mc d"></div><div class="mc l"></div><div class="mc d"></div><div class="mc l musketeer"></div>
+                            <div class="mc d"></div><div class="mc l"></div><div class="mc d enemy"></div><div class="mc l"></div><div class="mc d"></div>
+                            <div class="mc l"></div><div class="mc d enemy"></div><div class="mc l musketeer"></div><div class="mc d enemy"></div><div class="mc l"></div>
+                            <div class="mc d"></div><div class="mc l"></div><div class="mc d enemy"></div><div class="mc l"></div><div class="mc d"></div>
+                            <div class="mc l musketeer"></div><div class="mc d"></div><div class="mc l"></div><div class="mc d"></div><div class="mc l"></div>
+                        </div>
+                    </div>
                     <p>
                         A browser-playable port of a classic 5x5 capture-based strategy game.
                         Play as the Musketeers, hunting down Enemies while avoiding being lined
@@ -63,13 +124,59 @@
                         <span>HTML/CSS</span>
                         <span>Minimax AI</span>
                     </div>
-                    <a class="btn" href="projects/three-musketeers/">Play Now</a>
+                    <a class="btn" href="projects/three-musketeers/">Play Now →</a>
                 </div>
             </div>
         </section>
 
-        <section id="coursework">
-            <h2>Data Science Coursework</h2>
+        <section id="experience" class="container">
+            <p class="eyebrow">// Experience</p>
+            <ol class="timeline">
+                <li>
+                    <div class="timeline-when">Nov 2024 — May 2025</div>
+                    <div class="timeline-what">
+                        <h3>Research Assistant</h3>
+                        <p class="timeline-org">York University, Mechanical Engineering Dept.</p>
+                        <p>Ran tensile testing on materials and analyzed experimental data to produce technical reports.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-when">Aug 2022 — Sep 2023</div>
+                    <div class="timeline-what">
+                        <h3>Payroll Administrator</h3>
+                        <p class="timeline-org">Walker Industries</p>
+                        <p>Managed weekly payroll for 300 employees on Oracle Payroll Software.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-when">Mar 2022 — May 2022</div>
+                    <div class="timeline-what">
+                        <h3>Financial Administrator</h3>
+                        <p class="timeline-org">Canadian Bureau for International Education</p>
+                        <p>Processed tuition payments and reconciled accounts across institutions and students.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-when">Mar 2017 — Dec 2017</div>
+                    <div class="timeline-what">
+                        <h3>Technical Support Representative</h3>
+                        <p class="timeline-org">Sutherland Global Services</p>
+                        <p>Diagnosed and resolved hardware, software, and connectivity issues for customers.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-when">Jan 2017 — Sep 2018</div>
+                    <div class="timeline-what">
+                        <h3>Teaching Assistant, Accounting</h3>
+                        <p class="timeline-org">University of Windsor</p>
+                        <p>Graded coursework, reviewed material with students, and proctored exams.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section id="coursework" class="container">
+            <p class="eyebrow">// Coursework</p>
             <div class="card-grid">
                 <div class="card">
                     <h3><!-- Project Title --></h3>
@@ -80,13 +187,13 @@
                         <span><!-- Tech --></span>
                         <span><!-- Tech --></span>
                     </div>
-                    <a class="btn" href="#" target="_blank" rel="noopener">Read Report</a>
+                    <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Read Report</a>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
+        <section id="skills" class="container">
+            <p class="eyebrow">// Stack</p>
             <ul class="skills-list">
                 <li>Java</li>
                 <li>Python</li>
