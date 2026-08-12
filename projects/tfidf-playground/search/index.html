@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booksearch — a TF-IDF search engine</title>
+    <meta name="description" content="A from-scratch TF-IDF search engine over three public-domain books." />
+    <link rel="stylesheet" href="search.css" />
+</head>
+<body>
+    <a class="back-link" href="../../../">&larr; Back to portfolio</a>
+    <div id="home-view" class="home">
+        <div class="logo">
+            <span class="l1">B</span><span class="l2">o</span><span class="l3">o</span><span class="l1">k</span><span class="l4">s</span><span class="l2">e</span><span class="l5">a</span><span class="l1">r</span><span class="l3">c</span><span class="l4">h</span>
+        </div>
+        <p class="subtitle">a from-scratch TF-IDF search engine, over three public-domain books</p>
+
+        <div class="search-bar">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" type="text" placeholder="Search Alice in Wonderland, Pride and Prejudice, Sherlock Holmes…" autofocus />
+            <button id="search-btn" type="button">Search</button>
+        </div>
+
+        <p id="status" class="status">Indexing books…</p>
+
+        <div class="book-legend">
+            <span><i class="dot" style="background:var(--g-blue)"></i>Alice's Adventures in Wonderland</span>
+            <span><i class="dot" style="background:var(--g-red)"></i>Pride and Prejudice</span>
+            <span><i class="dot" style="background:var(--g-yellow)"></i>The Adventures of Sherlock Holmes</span>
+        </div>
+
+        <p id="results-meta" class="results-meta"></p>
+        <div id="results" class="results"></div>
+    </div>
+
+    <script type="module" src="search.js"></script>
+</body>
+</html>

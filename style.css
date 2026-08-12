@@ -1,35 +1,35 @@
 :root {
-    --bg: #ffffff;
-    --bg-panel: #f6f5ef;
-    --bg-panel-strong: #ece9dd;
-    --ink: #191b18;
-    --ink-muted: #5b6058;
-    --accent: #1f6f4f;
-    --accent-deep: #123c2b;
-    --accent-gold: #b8894f;
-    --accent-gold-deep: #8a6432;
-    --line: #dbdccf;
+    --bg: #f7f9fc;
+    --bg-panel: #eaeff7;
+    --bg-panel-strong: #dce5f5;
+    --ink: #121a2e;
+    --ink-muted: #4c5876;
+    --accent: #3457d5;
+    --accent-deep: #0f2456;
+    --accent-gold: #c9922e;
+    --accent-gold-deep: #8c6420;
+    --line: #dbe3f0;
     --max-width: 1040px;
 
     --font-display: "Fraunces", Georgia, serif;
     --font-body: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --page-gradient: linear-gradient(165deg, #ffffff 0%, #fdfcf9 55%, var(--bg-panel) 100%);
+    --page-gradient: linear-gradient(165deg, #ffffff 0%, #f7f9fc 55%, var(--bg-panel) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #0e120f;
-        --bg-panel: #171b17;
-        --bg-panel-strong: #1e231e;
-        --ink: #edeee8;
-        --ink-muted: #9aa094;
-        --accent: #4fae83;
-        --accent-deep: #a8e0c4;
-        --accent-gold: #d9b174;
-        --accent-gold-deep: #d9b174;
-        --line: #2b322b;
+        --bg: #0b1226;
+        --bg-panel: #131b33;
+        --bg-panel-strong: #1b274a;
+        --ink: #e8edfc;
+        --ink-muted: #93a0c2;
+        --accent: #5c86ff;
+        --accent-deep: #a8c2ff;
+        --accent-gold: #e0b463;
+        --accent-gold-deep: #e0b463;
+        --line: #223357;
     }
 }
 
@@ -540,6 +540,27 @@ main section + section {
 .mc.enemy {
     background: #ffffff;
     border: 2px solid var(--ink-muted);
+}
+
+.mini-tfidf {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    grid-template-rows: repeat(5, 20px);
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.mt {
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--accent) calc(var(--w) * 100%), var(--bg-panel));
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
 }
 
 .card h3 {

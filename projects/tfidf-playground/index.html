@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TF-IDF Playground — C. E. Okwor</title>
+    <meta name="description" content="An interactive, from-scratch TF-IDF implementation you can run against your own text in the browser." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <a class="back-link" href="../../">&larr; Back to portfolio</a>
+
+    <main class="wrap">
+        <h1>TF-IDF Playground</h1>
+        <p class="intro">
+            A from-scratch TF-IDF implementation running entirely in your browser &mdash; no libraries.
+            Edit the documents below (or add your own), then Analyze to see each document's top
+            keywords, how similar the documents are to each other, and how a search query ranks
+            against them.
+        </p>
+
+        <section class="panel">
+            <div class="panel-head">
+                <h2>Documents</h2>
+                <button type="button" id="add-doc" class="btn btn-outline">+ Add document</button>
+            </div>
+            <div id="doc-list"></div>
+            <button type="button" id="analyze" class="btn">Analyze &rarr;</button>
+        </section>
+
+        <section class="panel">
+            <h2>Top keywords per document</h2>
+            <div id="keywords-output"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Pairwise similarity</h2>
+            <div id="similarity-output"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Search</h2>
+            <input type="text" id="query-input" placeholder="Type a query to rank documents against it..." />
+            <div id="query-output"></div>
+        </section>
+    </main>
+
+    <script type="module" src="js/ui.js"></script>
+</body>
+</html>
