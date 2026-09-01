@@ -17,7 +17,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --bg: #0b1226;
         --bg-panel: #131b33;
         --bg-panel-strong: #1b274a;
@@ -29,6 +29,19 @@
         --accent-gold-deep: #e0b463;
         --line: #223357;
     }
+}
+
+:root[data-theme="dark"] {
+    --bg: #0b1226;
+    --bg-panel: #131b33;
+    --bg-panel-strong: #1b274a;
+    --ink: #e8edfc;
+    --ink-muted: #93a0c2;
+    --accent: #5c86ff;
+    --accent-deep: #a8c2ff;
+    --accent-gold: #e0b463;
+    --accent-gold-deep: #e0b463;
+    --line: #223357;
 }
 
 * {
@@ -129,6 +142,43 @@ a:focus-visible,
     text-decoration: none;
 }
 
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--bg-panel);
+    color: var(--ink-muted);
+    cursor: pointer;
+    padding: 0;
+    transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.theme-toggle svg {
+    width: 17px;
+    height: 17px;
+}
+
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
 .nav-resume {
     background: var(--accent);
     color: #ffffff !important;
@@ -137,7 +187,7 @@ a:focus-visible,
 }
 
 .nav-resume:hover {
-    background: var(--accent-deep);
+    background: color-mix(in srgb, var(--accent) 80%, black);
     color: #ffffff !important;
 }
 
@@ -211,7 +261,7 @@ header.hero {
     margin: 0 auto 28px;
     border: 4px solid var(--accent-gold);
     box-shadow: 0 14px 32px -14px color-mix(in srgb, var(--accent-deep) 45%, transparent);
-    background: var(--accent-deep);
+    background: var(--accent);
 }
 
 .avatar img {
@@ -433,7 +483,7 @@ main section + section {
     justify-content: center;
     padding-left: 4px;
     border-radius: 50%;
-    background: color-mix(in srgb, var(--ink) 55%, transparent);
+    background: rgba(10, 14, 24, 0.6);
     color: #ffffff;
     font-size: 1.1rem;
     transform: translate(-50%, -50%) scale(1);
@@ -615,7 +665,7 @@ main section + section {
 }
 
 .btn:hover {
-    background: var(--accent-deep);
+    background: color-mix(in srgb, var(--accent) 80%, black);
     color: #ffffff;
     text-decoration: none;
     transform: translateY(-1px);

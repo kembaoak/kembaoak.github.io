@@ -12,6 +12,14 @@
         rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script>
+        (function () {
+            var stored = localStorage.getItem("theme");
+            if (stored === "light" || stored === "dark") {
+                document.documentElement.setAttribute("data-theme", stored);
+            }
+        })();
+    </script>
 </head>
 <body>
     <nav class="site-nav">
@@ -25,6 +33,15 @@
                 <a href="#coursework">Coursework</a>
                 <a href="#skills">Stack</a>
                 <a class="nav-resume" href="assets/Chivuzo_Okwor_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4.5" />
+                        <path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" />
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" />
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
@@ -360,6 +377,21 @@
     </footer>
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        var themeToggle = document.getElementById("theme-toggle");
+        var systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+        themeToggle.addEventListener("click", function () {
+            var current = document.documentElement.getAttribute("data-theme");
+            var isDark = current ? current === "dark" : systemPrefersDark.matches;
+            var next = isDark ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", next);
+            localStorage.setItem("theme", next);
+            themeToggle.setAttribute(
+                "aria-label",
+                next === "dark" ? "Switch to light theme" : "Switch to dark theme"
+            );
+        });
     </script>
 </body>
 </html>
