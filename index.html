@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chivuzo Edwin Okwor</title>
     <meta name="description" content="Portfolio of Chivuzo Edwin Okwor — Data Science graduate student and software developer." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f2456'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%23ffffff' text-anchor='middle'%3ECO%3C/text%3E%3C/svg%3E" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Chivuzo Edwin Okwor" />
+    <meta property="og:description" content="Portfolio of Chivuzo Edwin Okwor — Data Science graduate student and software developer." />
+    <meta property="og:url" content="https://kembaoak.github.io/" />
+    <meta property="og:image" content="https://kembaoak.github.io/assets/profile.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Chivuzo Edwin Okwor" />
+    <meta name="twitter:description" content="Portfolio of Chivuzo Edwin Okwor — Data Science graduate student and software developer." />
+    <meta name="twitter:image" content="https://kembaoak.github.io/assets/profile.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +35,7 @@
     <nav class="site-nav">
         <div class="container site-nav-inner">
             <a class="wordmark" href="#top">C. E. Okwor</a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#videos">Videos</a>
@@ -33,6 +43,8 @@
                 <a href="#coursework">Coursework</a>
                 <a href="#skills">Stack</a>
                 <a class="nav-resume" href="assets/Chivuzo_Okwor_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+            </div>
+            <div class="nav-actions">
                 <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="4.5" />
@@ -40,6 +52,14 @@
                     </svg>
                     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" />
+                    </svg>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <path d="M3 6h18M3 12h18M3 18h18" />
+                    </svg>
+                    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <path d="M5 5l14 14M19 5L5 19" />
                     </svg>
                 </button>
             </div>
@@ -70,16 +90,6 @@
                     <a href="https://github.com/kembaoak" target="_blank" rel="noopener">[ github ]</a>
                     <a href="assets/Chivuzo_Okwor_Resume.pdf" target="_blank" rel="noopener">[ résumé ]</a>
                 </nav>
-            </div>
-            <div class="hero-motif" aria-hidden="true">
-                <div class="board-motif">
-                    <div class="motif-cell"></div><div class="motif-cell piece"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div>
-                    <div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div>
-                    <div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell piece"></div><div class="motif-cell"></div>
-                    <div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div>
-                    <div class="motif-cell piece"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div><div class="motif-cell"></div>
-                </div>
-                <p class="motif-caption">3 pieces, no shared row or column — a win state in Three Musketeers</p>
             </div>
         </div>
     </header>
@@ -392,6 +402,73 @@
                 next === "dark" ? "Switch to light theme" : "Switch to dark theme"
             );
         });
+
+        // Mobile nav menu
+        var navToggle = document.getElementById("nav-toggle");
+        var navLinks = document.getElementById("nav-links");
+
+        navToggle.addEventListener("click", function () {
+            var isOpen = navLinks.classList.toggle("open");
+            navToggle.classList.toggle("open", isOpen);
+            navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+                navToggle.classList.remove("open");
+                navToggle.setAttribute("aria-expanded", "false");
+                navToggle.setAttribute("aria-label", "Open menu");
+            });
+        });
+
+        // Scroll-reveal for each section (progressive enhancement: sections are
+        // only hidden once JS has actually added the "reveal" class, so nothing
+        // stays invisible if this script fails to run).
+        if ("IntersectionObserver" in window) {
+            var revealTargets = document.querySelectorAll("main > section");
+            var revealObserver = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                },
+                { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
+            );
+            revealTargets.forEach(function (el) {
+                el.classList.add("reveal");
+                revealObserver.observe(el);
+            });
+
+            // Highlight the nav link for whichever section is currently in view.
+            var navAnchors = Array.prototype.slice.call(
+                document.querySelectorAll('.nav-links a[href^="#"]')
+            );
+            var sectionEls = navAnchors
+                .map(function (a) {
+                    return document.getElementById(a.getAttribute("href").slice(1));
+                })
+                .filter(Boolean);
+
+            var activeObserver = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        var idx = sectionEls.indexOf(entry.target);
+                        if (idx === -1) return;
+                        if (entry.isIntersecting) {
+                            navAnchors.forEach(function (a) { a.classList.remove("active"); });
+                            navAnchors[idx].classList.add("active");
+                        }
+                    });
+                },
+                { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+            );
+            sectionEls.forEach(function (el) { activeObserver.observe(el); });
+        }
     </script>
 </body>
 </html>
